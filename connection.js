@@ -1,7 +1,11 @@
 import mongoose from "mongoose";
+import dotenv from "dotenv";  // Import dotenv
+
+dotenv.config();  
 
 const {DATABASE,DATABASE_PASSWORD} = process.env
 const uri=DATABASE.replace('<db_password>',DATABASE_PASSWORD)
+
 mongoose
   .connect(uri)
   .then(() => {
